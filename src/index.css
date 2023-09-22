@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-slate-100
+    }
+}
+
+.btn {
+    @apply px-3 py-1.5 rounded-md h-fit capitalize inline-flex items-center justify-center disabled:cursor-not-allowed gap-2;
+}
+
+.btn.md {
+    @apply py-1
+}
+
+.btn.fluid {
+    @apply w-full;
+}
+
+.btn.gray {
+    @apply bg-gray-300 text-white hover:bg-gray-400 hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn.sky {
+    @apply bg-sky-300 text-white hover:bg-sky-400 hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn.red {
+    @apply bg-red-300 text-white hover:bg-red-500 hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn.green {
+    @apply bg-green-300 text-white hover:bg-green-400 hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn.yellow {
+    @apply bg-yellow-300 text-white hover:bg-yellow-400 hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn.black {
+    @apply bg-black text-white hover:bg-black hover:text-white disabled:bg-gray-200 disabled:hover:bg-gray-300;
+}
+
+.btn-container {
+    @apply flex justify-end gap-2;
+}
+
+.navbar a, .navbar button {
+    @apply inline-flex items-center gap-4 text-slate-400 hover:text-sky-300 transition-colors duration-150 ease-in;
+}
+
+.navbar a.active{
+    @apply text-sky-300 font-bold;
+}
+
+.database-container {
+    @apply bg-white rounded-lg p-6 flex flex-col gap-4 border drop-shadow-xl mb-8 z-0 relative;
+}
+
+.database-container.new {
+    @apply border border-sky-300 shadow-xl shadow-sky-300/50 drop-shadow-none;
+}
+
+.database-container.error {
+    @apply border border-red-500 shadow-xl shadow-red-500/50 drop-shadow-none;
+}
+
+.database-container.hide {
+    @apply hidden
+}
+
+.database-container .connection {
+    @apply flex-col lg:flex-row flex gap-8;
+}
+
+.database-container .connection .source,.target {
+    @apply w-full lg:w-1/2;
+}
+
+.database-container .heading {
+    @apply font-semibold text-lg text-slate-950 mb-2;
+}
+
+.connection .connection-wrapper {
+    @apply border rounded p-4;
+}
+
+.connection-wrapper.error {
+    @apply border-red-500 shadow-md shadow-red-500/50;
+}
+
+.connection .connection-wrapper > label {
+    @apply block;
+}
+
+.connection-wrapper .connection-input-wrapper {
+    @apply inline-flex gap-4 items-center w-full mb-4;
+}
+
+.connection-input-wrapper > label {
+    @apply w-1/5 capitalize;
+}
+
+.connection-input-wrapper > input, .connection-input-wrapper > select {
+    @apply bg-slate-200 px-3 py-1.5 rounded w-4/5 ml-auto;
+}
+
+.tables-wrapper {
+    @apply relative overflow-auto rounded;
+}
+
+.tables-wrapper.enable-overflow {
+    @apply overflow-visible;
+}
+
+.tables-wrapper table {
+    @apply table-auto w-full text-left;
+}
+
+.tables-wrapper thead {
+    @apply bg-slate-100 border rounded-t;
+}
+
+.tables-wrapper th {
+    @apply px-6 py-3 capitalize whitespace-nowrap;
+}
+
+.tables-wrapper tbody {
+    @apply divide-y border rounded-b;
+}
+
+.tables-wrapper tbody td {
+    @apply px-6 py-4;
+}
+
+.tables-wrapper select,input {
+    @apply w-full outline-none;
+}
+
+.modal-container {
+    @apply fixed top-0 left-0 w-screen h-screen bg-black/50 z-30 justify-center items-center hidden;
+}
+
+.modal-container.show {
+    @apply flex
+}
+
+.modal-card {
+    @apply bg-white rounded-xl border min-w-[16rem] overflow-hidden max-w-full max-h-full;
+}
+
+.modal-card.enable-overflow {
+    @apply overflow-visible;
+}
+
+.modal-body > div:nth-child(1) {
+    @apply px-4 py-3 border-b;
+}
+
+.modal-body > div:nth-child(2) {
+    @apply px-4 py-3 flex justify-end gap-2;
+}
+
+.dropdown-container {
+    @apply relative
+}
+
+.dropdown-container > .dropdown-list {
+    @apply absolute  bg-white z-40 rounded-md border drop-shadow-md hidden overflow-hidden;
+}
+
+.dropdown-list.down {
+    @apply top-8 right-0
+}
+
+.dropdown-list.top {
+    @apply bottom-0 right-8
+}
+
+.dropdown-list.bottom {
+    @apply top-10
+}
+
+.dropdown-list.left {
+    @apply right-0
+}
+
+.dropdown-list.right {
+    @apply left-0
+}
+
+.dropdown-list.middle {
+    @apply left-1/2 -translate-x-1/2
+}
+
+.dropdown-container > .dropdown-list.show {
+    @apply block;
+}
+
+.dropdown-list > ul {
+    @apply divide-y;
+}
+
+.dropdown-list > ul > li {
+    @apply  hover:bg-slate-50 transition-colors duration-150 ease-out
+}
+
+.dropdown-list>ul>li>button {
+    @apply inline-flex items-center w-full gap-2 px-4 py-2
+}
+
+.toast-container {
+    @apply fixed bottom-8 left-8 z-50 flex flex-col gap-4
+}
+
+.toast-container > .toast {
+    @apply px-6 py-4 rounded-lg border drop-shadow-lg flex gap-8 justify-between items-center min-w-[8rem]
+}
+
+.toast.green {
+    @apply border-green-500 bg-green-200 text-green-500
+}
+
+.toast.red {
+    @apply border-red-500 bg-red-200 text-red-500
+}
+
+div.pagination > button {
+    @apply rounded-full text-sky-300 inline-flex items-center justify-center w-10 h-10 hover:text-sky-500 hover:bg-sky-100 disabled:text-slate-300
+}
