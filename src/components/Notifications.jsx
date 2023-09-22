@@ -11,7 +11,9 @@ export default function Notifications() {
   useEffect(() => {
     function connect() {
       const ws = new WebSocket(
-        `${import.meta.env.VITE_API_URL.replace("http", "ws")}`
+        `${(
+          import.meta.env.VITE_API_URL || "http://localhost:3000/api"
+        ).replace("http", "ws")}`
       );
 
       // WebSocket event listeners
